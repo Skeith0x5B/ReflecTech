@@ -4,7 +4,7 @@
 	File		:	PlatformInfo.cpp
 	Author		:	Jamie Taylor
 	Last Edit	:	23/03/12
-	Desc		:	Find out more about the platform.  Supports x86/x86_64 architecture only atm.  No ARM etc support ...
+	Desc		:	Find out more about the platform.  Supports x86/x86_64 architecture only at the moment.
 */
 #include "RtPlatformInfo.h"
 
@@ -110,7 +110,7 @@ I32 CpuidQuery(I32 query, CpuDesc &result)
 	#endif // MSVC - 32 or 64 bit
 #elif RT_COMPILER == RT_COMPILER_GCC
 	#if RT_ARCHITECTURE == RT_ARCHITECTURE_64
-		// "=a" -> eax, "=b" -> ebx etc... | "a" -> "specifies the `a’ or `d’ registers" - http://www.ibiblio.org/gferg/ldp/GCC-Inline-Assembly-HOWTO.html
+		// "=a" -> eax, "=b" -> ebx etc... | "a" -> "specifies the `aâ€™ or `dâ€™ registers" - http://www.ibiblio.org/gferg/ldp/GCC-Inline-Assembly-HOWTO.html
 		__asm__
 		(
 			"cpuid": "=a"(result.eax), "=b"(result.ebx), "=c"(result.ecx), "=d"(result.edx)	: "a"(query)
