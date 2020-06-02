@@ -1,12 +1,12 @@
 /*
 ===============================================================================
 
-	ReflecTech
-	==========
-	File		:	RtWaveFileXAudio2.h
-	Author		:	Jamie Taylor
-	Last Edit	:	25/03/13
-	Desc		:	An XAudio2 implementationof the basic static wave file class. Adopting a DOOM 3 style syntax.
+    ReflecTech
+    ==========
+    File        :   RtWaveFileXAudio2.h
+    Author      :   Jamie Taylor
+    Last Edit   :   25/03/13
+    Desc        :   An XAudio2 implementationof the basic static wave file class. Adopting a DOOM 3 style syntax.
 
 ===============================================================================
 */
@@ -45,25 +45,25 @@ XAudio2 powered Wave file class
 
 class WavFileXAudio2 : public WavFile, public IXAudio2VoiceCallback {
 public:
-							WavFileXAudio2( void );
-							~WavFileXAudio2( void );
+                            WavFileXAudio2( void );
+                            ~WavFileXAudio2( void );
 
-	bool					Load( const I8 *fileName );
-	void					UnLoad( void );
+    bool                    Load( const I8 *fileName );
+    void                    UnLoad( void );
 
-	void					Play( void );
-	void					Pause( void );
-	void					Stop( void );
+    void                    Play( void );
+    void                    Pause( void );
+    void                    Stop( void );
 
-							// loopStart and loopDuration expect a number of seconds
-	void					SetLoopingParams( U32 loopStart, U32 loopDuration, U32 loopCount, bool immediateEffect = true);
+                            // loopStart and loopDuration expect a number of seconds
+    void                    SetLoopingParams( U32 loopStart, U32 loopDuration, U32 loopCount, bool immediateEffect = true);
 
-							// within the range 0.0f - 1.0f
-	void					SetVolume( F32 vol );
-	F32						GetVolume( void ) const;
+                            // within the range 0.0f - 1.0f
+    void                    SetVolume( F32 vol );
+    F32                     GetVolume( void ) const;
 
-    bool					IsLoaded( void ) const;
-    bool					IsPlaying( void ) const;
+    bool                    IsLoaded( void ) const;
+    bool                    IsPlaying( void ) const;
 
     // void Set3d( bool 3d );
     // bool Is3d( ) const;
@@ -76,38 +76,38 @@ public:
     IXAudio2SourceVoice*    GetSourceVoice( void ) const;
 
 private:
-							// private implementation specific helpers, used to parse a PCM wav file
-	bool					FindChunk( U32 fourcc, U32 &chunkSize, U32 &chunkPosition );
-	U32						ReadChunk( void *buffer, U32 bytesToRead, U32 bufferOffset ); 
+                            // private implementation specific helpers, used to parse a PCM wav file
+    bool                    FindChunk( U32 fourcc, U32 &chunkSize, U32 &chunkPosition );
+    U32                     ReadChunk( void *buffer, U32 bytesToRead, U32 bufferOffset );
 
-							// private, implementation specific members
-	HANDLE					audioFile;
-	WAVEFORMATEXTENSIBLE	audioFileFormat;
-	XAUDIO2_BUFFER			audioFileBuffer;
-	IXAudio2SourceVoice *	sourceVoice;
+                            // private, implementation specific members
+    HANDLE                  audioFile;
+    WAVEFORMATEXTENSIBLE    audioFileFormat;
+    XAUDIO2_BUFFER          audioFileBuffer;
+    IXAudio2SourceVoice *   sourceVoice;
 
-							// used for 3D audio, an audio file can represent a sound emitter in the world
-    // bool					is3d;
-	X3DAUDIO_EMITTER		emitter;
+                            // used for 3D audio, an audio file can represent a sound emitter in the world
+    // bool                 is3d;
+    X3DAUDIO_EMITTER        emitter;
 
-							// local alloator
-	HeapAllocator<void>		allocator;
+                            // local alloator
+    HeapAllocator<void>     allocator;
 
-							// private implementation specific helpers; implemented XAudio2 callback methods
-	void __stdcall			OnStreamEnd( void );
-	void __stdcall			OnVoiceProcessingPassEnd( void );
-    void __stdcall			OnVoiceProcessingPassStart( U32 SamplesRequired );
-    void __stdcall			OnBufferEnd( void * pBufferContext );
-    void __stdcall			OnBufferStart( void * pBufferContext );
-	void __stdcall			OnLoopEnd( void * pBufferContext );
-	void __stdcall			OnVoiceError( void * pBufferContext, HRESULT Error );
+                            // private implementation specific helpers; implemented XAudio2 callback methods
+    void __stdcall          OnStreamEnd( void );
+    void __stdcall          OnVoiceProcessingPassEnd( void );
+    void __stdcall          OnVoiceProcessingPassStart( U32 SamplesRequired );
+    void __stdcall          OnBufferEnd( void * pBufferContext );
+    void __stdcall          OnBufferStart( void * pBufferContext );
+    void __stdcall          OnLoopEnd( void * pBufferContext );
+    void __stdcall          OnVoiceError( void * pBufferContext, HRESULT Error );
 };
 
 
 // ALT CREATE & DESTROY FOR TESTING
 extern "C" WavFile * CreateWavFile( void *mem );
-extern "C" void		 DestroyWavFile( WavFile *p );
-extern "C" U32		 GetWavFileMemoryRequirement( void );
+extern "C" void      DestroyWavFile( WavFile *p );
+extern "C" U32       GetWavFileMemoryRequirement( void );
 
 
 #endif // RT_WAV_FILE_XAUDIO2_H
