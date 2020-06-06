@@ -397,7 +397,7 @@ WavFileXAudio2::ReadChunk
 returns the number of bytes read, 0 indicates error
 ================
 */
-U32	WavFileXAudio2::ReadChunk( void *buffer, U32 bytesToRead, U32 bufferOffset ) {
+U32    WavFileXAudio2::ReadChunk( void *buffer, U32 bytesToRead, U32 bufferOffset ) {
     // set file pointer
     if( SetFilePointer( audioFile, bufferOffset, NULL, FILE_BEGIN ) == INVALID_SET_FILE_POINTER ) {
         return 0;

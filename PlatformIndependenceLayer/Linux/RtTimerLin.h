@@ -1,10 +1,10 @@
 /*
-	Reflec-Tech
-	-----------
-	File		:	Linux/Timer.h
-	Author		:	Jamie Taylor
-	Last Edit	:	16/03/12
-	Desc		:	Linux high-res timer header.
+    Reflec-Tech
+    -----------
+    File        :   Linux/Timer.h
+    Author      :   Jamie Taylor
+    Last Edit   :   16/03/12
+    Desc        :   Linux high-res timer header.
 */
 #ifndef TIMERL_H
 #define TIMERL_H
@@ -21,26 +21,26 @@
 class Timer
 {
 public:
-	Timer();
-	~Timer();
+    Timer();
+    ~Timer();
 
-	// reset the timer
-	void Reset();
+    // reset the timer
+    void Reset();
 
-	// platform specific
-	U32 GetMilliseconds();
-	U32 GetMicroseconds();
+    // platform specific
+    U32 GetMilliseconds();
+    U32 GetMicroseconds();
 
-	// identical across all implementations
-	U32 GetMillisecondsCPU();
-	U32 GetMicrosecondsCPU();
-	
+    // identical across all implementations
+    U32 GetMillisecondsCPU();
+    U32 GetMicrosecondsCPU();
+
 private:
-	clock_t mStartTimeCPU;
-	
-	// time val holds elapsed seconds 
-	// and the rest of elapsed time (fraction of a second) in microseconds
-	timeval mStartTime;
+    clock_t mStartTimeCPU;
+
+    // time val holds elapsed seconds 
+    // and the rest of elapsed time (fraction of a second) in microseconds
+    timeval mStartTime;
 };
 /**************************************************************************************************************************/
 

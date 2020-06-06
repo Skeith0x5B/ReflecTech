@@ -1,13 +1,13 @@
 /*
 ===============================================================================
 
-	ReflecTech
-	==========
-	File		:	RtCpuMonitor.h
-	Author		:	Jamie Taylor
-	Last Edit	:	12/07/12
-	Desc		:	Pulls in the appropriate implementatio from the platform
-					independence layer.
+    ReflecTech
+    ==========
+    File        :    RtCpuMonitor.h
+    Author      :    Jamie Taylor
+    Last Edit   :    12/07/12
+    Desc        :    Pulls in the appropriate implementatio from the platform
+                    independence layer.
 
 ===============================================================================
 */

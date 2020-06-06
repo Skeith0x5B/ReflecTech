@@ -1,12 +1,12 @@
 /*
 ===============================================================================
 
-	ReflecTech
-	==========
-	File		:	RtMmeoryCommon.h
-	Author		:	Jamie Taylor
-	Last Edit	:	25/03/13
-	Desc		:	Common os/api independent memory operations.
+    ReflecTech
+    ==========
+    File        :    RtMmeoryCommon.h
+    Author      :    Jamie Taylor
+    Last Edit   :    25/03/13
+    Desc        :    Common os/api independent memory operations.
 
 ===============================================================================
 */

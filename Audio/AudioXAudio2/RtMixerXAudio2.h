@@ -39,8 +39,8 @@ XAudio2 powered mixer class
 */
 class MixerXAudio2 : public Mixer {
 public:
-                                               MixerXAudio2( void );
-                                               ~MixerXAudio2( void );
+                                                MixerXAudio2( void );
+                                                ~MixerXAudio2( void );
 
     bool                                        Start( void );
     void                                        Shutdown( void );

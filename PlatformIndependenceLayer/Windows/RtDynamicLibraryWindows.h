@@ -1,16 +1,16 @@
 /*
 ===============================================================================
 
-	ReflecTech
-	==========
-	File		:	RtDynamicLibraryWindows.h
-	Author		:	Jamie Taylor
-	Last Edit	:	14/07/13
-	Desc		:	Represents a DLL/SO.
+    ReflecTech
+    ==========
+    File        :   RtDynamicLibraryWindows.h
+    Author      :   Jamie Taylor
+    Last Edit   :   14/07/13
+    Desc        :   Represents a DLL/SO.
 
-					_H - using heap allocator
-					_DP - using dynamic pool allocator
-					_V - volatile; source code likely/probable to change
+                    _H - using heap allocator
+                    _DP - using dynamic pool allocator
+                    _V - volatile; source code likely/probable to change
 
 ===============================================================================
 */
@@ -32,23 +32,23 @@ Dynamic Library class - Windows implementation
 */
 class DynamicLibrary {
 public:
-				  // let this default to false; the dllManager will set this as needed
-				  DynamicLibrary( void );
-				  ~DynamicLibrary( void );
+                  // let this default to false; the dllManager will set this as needed
+                  DynamicLibrary( void );
+                  ~DynamicLibrary( void );
 
-	bool		  Load( const I8 *libraryName );
-	void		  Unload( void );
+    bool          Load( const I8 *libraryName );
+    void          Unload( void );
 
-				  // get a symbol from the library, null on failure
-	void        * GetSymbol( const I8 *symbolName ) const; 
+                  // get a symbol from the library, null on failure
+    void        * GetSymbol( const I8 *symbolName ) const; 
 
-				  // get the handle for the library
-	libraryHandle GetHandle( void ) const;
-				  // get the last error that occured concerning this dynamic library
-	void		  GetError( void ) const;
+                  // get the handle for the library
+    libraryHandle GetHandle( void ) const;
+                  // get the last error that occured concerning this dynamic library
+    void          GetError( void ) const;
 
 private:
-	libraryHandle internalHandle;
+    libraryHandle internalHandle;
 };
 
 

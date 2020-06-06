@@ -1,12 +1,12 @@
 /*
 ===============================================================================
 
-	Reflec-Tech
-	===========
-	File		:	RtLights.h
-	Author		:	Jamie Taylor
-	Last Edit	:	24/07/13
-	Desc		:	Describes the kinds of the lights the engine supports.
+    Reflec-Tech
+    ===========
+    File        :    RtLights.h
+    Author      :    Jamie Taylor
+    Last Edit   :    24/07/13
+    Desc        :    Describes the kinds of the lights the engine supports.
 
 ===============================================================================
 */
@@ -21,18 +21,18 @@
 
 
 struct DirectionalLight {
-		DirectionalLight( void ) {
-			ZeroMem( this, sizeof( this ) );
-		}
+        DirectionalLight( void ) {
+            ZeroMem( this, sizeof( this ) );
+        }
 
-	F32 ambientColour[4];
-	F32 diffuseColour[4];
+    F32 ambientColour[4];
+    F32 diffuseColour[4];
 
-	F32 specularColour[4];
-	F32 specularPower;
+    F32 specularColour[4];
+    F32 specularPower;
 
-	F32 direction[3];
-	//F32 padding;
+    F32 direction[3];
+    //F32 padding;
 };
 
 

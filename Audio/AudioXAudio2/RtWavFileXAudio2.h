@@ -71,7 +71,7 @@ public:
     // get position, front and up vectors?
 
                             // implementation specific helpers
-    WAVEFORMATEXTENSIBLE*	GetFormatData( void ) const;
+    WAVEFORMATEXTENSIBLE*    GetFormatData( void ) const;
     X3DAUDIO_EMITTER*       Get3dEmitter( void ) const;
     IXAudio2SourceVoice*    GetSourceVoice( void ) const;
 

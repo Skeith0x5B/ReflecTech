@@ -1,12 +1,12 @@
 /*
 ===============================================================================
 
-	ReflecTech
-	==========
-	File		:	RtPassThroughShader.fx
-	Author		:	Jamie Taylor
-	Last Edit	:	22/07/13
-	Desc		:	Basic test shader using the format seen in Luna's D3D11 book.
+    ReflecTech
+    ==========
+    File        :    RtPassThroughShader.fx
+    Author        :    Jamie Taylor
+    Last Edit    :    22/07/13
+    Desc        :    Basic test shader using the format seen in Luna's D3D11 book.
 
 ===============================================================================
 */
@@ -20,30 +20,30 @@ Generic geometry colouring
 */
 cbuffer cbPerObject
 {
-	float4x4 gWorldViewProj; 
+    float4x4 gWorldViewProj; 
 };
 
 struct VertexIn
 {
-	float3 PosL  : POSITION;
-	float3 Norm  : NORMAL;
+    float3 PosL  : POSITION;
+    float3 Norm  : NORMAL;
     float4 Color : COLOR;
 };
 
 struct VertexOut
 {
-	float4 PosH  : SV_POSITION;
+    float4 PosH  : SV_POSITION;
     float4 Color : COLOR;
 };
 
 VertexOut VS(VertexIn vin)
 {
-	VertexOut vout;
-	
-	// Transform to homogeneous clip space.
-	vout.PosH = mul(float4(vin.PosL, 1.0f), gWorldViewProj);
-	
-	// Just pass vertex color into the pixel shader.
+    VertexOut vout;
+    
+    // Transform to homogeneous clip space.
+    vout.PosH = mul(float4(vin.PosL, 1.0f), gWorldViewProj);
+    
+    // Just pass vertex color into the pixel shader.
     vout.Color = vin.Color;
     
     return vout;
@@ -59,7 +59,7 @@ technique11 ColorTech
     pass P0
     {
         SetVertexShader( CompileShader( vs_5_0, VS() ) );
-		SetGeometryShader( NULL );
+        SetGeometryShader( NULL );
         SetPixelShader( CompileShader( ps_5_0, PS() ) );
     }
 }

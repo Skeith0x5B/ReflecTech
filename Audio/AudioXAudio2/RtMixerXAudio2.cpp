@@ -180,7 +180,7 @@ U32 MixerXAudio2::GetAttachedAudioFileCount( void ) const {
 MixerXAudio2::GetActiveAudioFileCount
 ================
 */
-U32	MixerXAudio2::GetActiveAudioFileCount( void ) const {
+U32    MixerXAudio2::GetActiveAudioFileCount( void ) const {
     U32 activeCount = 0;
 
     AudioFileMixerView *p = listHead;

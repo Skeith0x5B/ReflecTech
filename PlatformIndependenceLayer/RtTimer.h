@@ -1,12 +1,12 @@
 /*
 ===============================================================================
 
-	ReflecTech
-	==========
-	File		:	Timer.h
-	Author		:	Jamie Taylor
-	Last Edit	:	16/03/12
-	Desc		:	Choose which timer implementation to load.
+    ReflecTech
+    ==========
+    File        :    Timer.h
+    Author      :    Jamie Taylor
+    Last Edit   :    16/03/12
+    Desc        :    Choose which timer implementation to load.
 
 ===============================================================================
 */
@@ -21,9 +21,9 @@
 
 
 #if RT_PLATFORM == RT_PLATFORM_WINDOWS
-	#include "Windows/RtTimerWin.h"
+    #include "Windows/RtTimerWin.h"
 #elif RT_PLATFORM == RT_PLATFORM_LINUX
-	#include "Linux/RtTimerLin.h"
+    #include "Linux/RtTimerLin.h"
 #endif
 
 

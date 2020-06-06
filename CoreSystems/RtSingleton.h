@@ -3,23 +3,22 @@
 
     ReflecTech
     ==========
-    File		:	RtSingleton.h
-    Author		:	Jamie Taylor
-    Last Edit	:	08/07/13
-    Desc		:	Singleton implementation, inspired by that seen in OGRE. Effectively 'wraps/holds' the class you want to
-                    make a singleton out of. This way you don't have to alter the code of the class in question, we simply use a coupling.
+    File        :    RtSingleton.h
+    Author      :    Jamie Taylor
+    Last Edit   :    08/07/13
+    Desc        :    Singleton implementation, inspired by that seen in OGRE. Effectively 'wraps/holds' the class you want to
+                     make a singleton out of. This way you don't have to alter the code of the class in question, we simply use a coupling.
 
-                    INTENDED USAGE PATTERN: 1) Construct
-                                            2) Call GetSingletonPointer/Reference( )
+                     INTENDED USAGE PATTERN: 1) Construct
+                                             2) Call GetSingletonPointer/Reference( )
 
-                    SETUP/USAGE:
-                    ------------
-                    class testClass : public Singleton<testClass>
-                    {
-                        // ...
-                    };
-                    template<> testClass *Singleton<testClass>::singletonInstance = NULL;
-					
+                     SETUP/USAGE:
+                     ------------
+                     class testClass : public Singleton<testClass>
+                     {
+                         // ...
+                     };
+                     template<> testClass *Singleton<testClass>::singletonInstance = NULL;
 
 ===============================================================================
 */
@@ -70,7 +69,7 @@ Singleton<T>::Singleton
 template<class T>
 Singleton<T>::Singleton( void ) {
     RT_ASSERT( singletonInstance == NULL );
-	// setup the singleton instance
+    // setup the singleton instance
     singletonInstance = static_cast<T*>( this );
 }
 
@@ -92,7 +91,7 @@ Singleton<T>::GetSingletonPointer
 template<class T>
 T* Singleton<T>::GetSingletonPointer( void ) {
     RT_ASSERT( singletonInstance != NULL );
-	return singletonInstance;
+    return singletonInstance;
 }
 
 /*

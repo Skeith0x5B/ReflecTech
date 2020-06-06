@@ -1,12 +1,12 @@
 /*
 ===============================================================================
 
-	ReflecTech
-	==========
-	File		:	RtFrameCounter.cpp
-	Author		:	Jamie Taylor
-	Last Edit	:	07/07/13
-	Desc		:	Basic class to count the frames elapsed in a one second time frame.
+    ReflecTech
+    ==========
+    File        :    RtFrameCounter.cpp
+    Author      :    Jamie Taylor
+    Last Edit   :    07/07/13
+    Desc        :    Basic class to count the frames elapsed in a one second time frame.
 
 ===============================================================================
 */
@@ -21,7 +21,7 @@ FrameCounter::FrameCounter
 ================
 */
 FrameCounter::FrameCounter( void ) {
-	// ...
+    // ...
 }
 
 /*
@@ -30,7 +30,7 @@ FrameCounter::~FrameCounter
 ================
 */
 FrameCounter::~FrameCounter( void ) {
-	// ...
+    // ...
 }
 
 /*
@@ -39,10 +39,10 @@ FrameCounter::Startup
 ================
 */
 void FrameCounter::Startup( void ) {
-	fps = maxFps = 0;
-	minFps = U32_MAX;
-	frameCount = 0;
-	startTime = timer.GetMillisecondsCPU( );
+    fps = maxFps = 0;
+    minFps = U32_MAX;
+    frameCount = 0;
+    startTime = timer.GetMillisecondsCPU( );
 }
 
 /*
@@ -51,24 +51,24 @@ FrameCounter::Update
 ================
 */
 void FrameCounter::Update( void ) {
-	++frameCount;
+    ++frameCount;
 
-	// has a second elapsed?
-	if( timer.GetMillisecondsCPU( ) >= ( startTime + 1000 ) ) {
-		// set fps and reset internal state
-		fps = frameCount;
-		
-		if( fps < minFps ) {
-			minFps = fps;
-		}
-		
-		if( fps > maxFps ) {
-			maxFps = fps;
-		}
-		
-		frameCount = 0;
-		startTime  = timer.GetMillisecondsCPU( );
-	}
+    // has a second elapsed?
+    if( timer.GetMillisecondsCPU( ) >= ( startTime + 1000 ) ) {
+        // set fps and reset internal state
+        fps = frameCount;
+
+        if( fps < minFps ) {
+            minFps = fps;
+        }
+
+        if( fps > maxFps ) {
+            maxFps = fps;
+        }
+
+        frameCount = 0;
+        startTime  = timer.GetMillisecondsCPU( );
+    }
 }
 
 /*
@@ -77,7 +77,7 @@ FrameCounter::GetFrameCount
 ================
 */
 U32 FrameCounter::GetFrameCount( void ) const {
-	return fps;
+    return fps;
 }
 
 /*
@@ -85,8 +85,8 @@ U32 FrameCounter::GetFrameCount( void ) const {
 FrameCounter::GetMinFrameCount
 ================
 */
-U32	FrameCounter::GetMinFrameCount( void ) const {
-	return minFps;
+U32 FrameCounter::GetMinFrameCount( void ) const {
+    return minFps;
 }
 
 /*
@@ -94,6 +94,6 @@ U32	FrameCounter::GetMinFrameCount( void ) const {
 FrameCounter::GetMaxFrameCount
 ================
 */
-U32	FrameCounter::GetMaxFrameCount( void ) const {
-	return maxFps;
+U32 FrameCounter::GetMaxFrameCount( void ) const {
+    return maxFps;
 }

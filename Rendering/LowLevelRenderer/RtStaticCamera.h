@@ -1,14 +1,14 @@
 /*
 ===============================================================================
 
-	ReflecTech
-	==========
-	File		:	RtStaticCamera.h, DSV = Doom Syntax Version
-	Author		:	Jamie Taylor
-	Last Edit	:	26/01/13
-	Desc		:	A basic static camera class, specify a position and target.
+    ReflecTech
+    ==========
+    File        :    RtStaticCamera.h, DSV = Doom Syntax Version
+    Author      :    Jamie Taylor
+    Last Edit   :    26/01/13
+    Desc        :    A basic static camera class, specify a position and target.
 
-                    TODO: Add camera frustum for possible frustum culling?
+                     TODO: Add camera frustum for possible frustum culling?
 
 ===============================================================================
 */
@@ -31,27 +31,27 @@ StaticCamera class
 */
 class StaticCamera {
 public:
-					StaticCamera( void );
-					StaticCamera( const XMFLOAT3 *position, const XMFLOAT3 *target );
+                    StaticCamera( void );
+                    StaticCamera( const XMFLOAT3 *position, const XMFLOAT3 *target );
 
-	void			SetPosition( const XMFLOAT3 *position );
-	void			SetTarget( const XMFLOAT3 *target );
+    void            SetPosition( const XMFLOAT3 *position );
+    void            SetTarget( const XMFLOAT3 *target );
 
-    const XMMATRIX	CalculateViewMatrix( void );
-    const XMMATRIX 	CalculateWorldMatrix( void );
+    const XMMATRIX  CalculateViewMatrix( void );
+    const XMMATRIX  CalculateWorldMatrix( void );
 
 private:
-	XMFLOAT3		cameraPosition;
-	XMFLOAT3		cameraTarget;
+    XMFLOAT3        cameraPosition;
+    XMFLOAT3        cameraTarget;
 
-	XMFLOAT3		xBasisVector; 
-	XMFLOAT3		yBasisVector;
-	XMFLOAT3		zBasisVector;
+    XMFLOAT3        xBasisVector; 
+    XMFLOAT3        yBasisVector;
+    XMFLOAT3        zBasisVector;
 
-	// TODO:		VIEW FRUSTUM
+    // TODO:        VIEW FRUSTUM
 
-    XMMATRIX		viewMatrix;  // view matrix
-    XMMATRIX		worldMatrix; // inverse of view matrix and vice versa
+    XMMATRIX        viewMatrix;  // view matrix
+    XMMATRIX        worldMatrix; // inverse of view matrix and vice versa
 };
 /*
 ===============================================================================

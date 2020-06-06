@@ -78,7 +78,7 @@ private:
                                             struct AudioDeviceView {
                                                 AudioDeviceView( void ) { ZeroMem( this, sizeof( this ) ); }
 
-                                            WavFileXAudio2	 * file;
+                                            WavFileXAudio2     * file;
                                                 MixerXAudio2    * mixer;
                                                 AudioDeviceView * next;
                                             };
